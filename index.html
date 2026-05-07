@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="GEAR is a genetic search framework for autonomous research agents, replacing single-incumbent hill climbing with population-based frontier search over research states.">
+  <meta name="keywords"
+    content="GEAR, Genetic AutoResearch, autonomous research agents, agentic code evolution, population-based search, mutation, crossover, AutoResearch">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="GEAR: Genetic AutoResearch for Agentic Code Evolution">
+  <meta property="og:description"
+    content="GEAR equips autonomous research agents with a population of elite research states, mutation, crossover, and evolvable search policies.">
+  <meta property="og:type" content="website">
+  <title>GEAR | Genetic AutoResearch</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FF0ZND2TJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2FF0ZND2TJ');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="icon" type="image/svg+xml" href="static/images/gear/gear.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+
+<body class="gear-theme">
+  <nav class="topbar">
+    <div class="container is-max-desktop topbar-inner">
+      <a class="brand" href="#top">
+        <span>GEAR</span>
+        <img src="static/images/gear/gear-icon.png" alt="GEAR icon" class="brand-icon">
+      </a>
+
+      <div class="topbar-links">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero hero-loopformer" id="top">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="hero-shell">
+          <div class="hero-copy has-text-centered">
+            <div class="eyebrow-row">
+              <span class="eyebrow-pill accepted-pill">Autonomous research agents</span>
+              <span class="eyebrow-pill muted-pill">Population-based code evolution</span>
+            </div>
+
+            <h1 class="title publication-title">
+              GEAR: Genetic AutoResearch for Agentic Code Evolution
+            </h1>
+
+            <p class="hero-summary">
+              GEAR replaces single-incumbent hill climbing in AutoResearch-style agents with a bounded frontier of elite
+              research states, expanded through mutation, crossover, and—in its strongest variant—an evolvable search
+              controller.
+            </p>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://armenjeddi.github.io/" target="_blank" rel="noopener">Ahmadreza
+                  Jeddi</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">Minh Ngoc Le<sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://karaimer.github.io/" target="_blank" rel="noopener">Hakki C.
+                  Karaimer</a><sup>3</sup>,</span>
+              <span class="author-block"><a href="https://csprofkgd.github.io/" target="_blank"
+                  rel="noopener">Konstantinos G. Derpanis</a><sup>3,4</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.cs.toronto.edu/~taati/" target="_blank" rel="noopener">Babak
+                  Taati</a><sup>1,2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-6 publication-affiliations">
+              <span class="author-block"><sup>1</sup>University of Toronto</span>
+              <span class="dot-sep">•</span>
+              <span class="author-block"><sup>2</sup>Vector Institute</span>
+              <span class="dot-sep">•</span>
+              <span class="author-block"><sup>3</sup>AI Center-Toronto, Samsung Electronics</span>
+              <span class="dot-sep">•</span>
+              <span class="author-block"><sup>4</sup>York University</span>
+            </div>
+
+            <div class="publication-links hero-actions">
+              <span class="link-block">
+                <a href="./static/pdf/GEAR_Genetic_AutoResearch.pdf"
+                  class="external-link button action-button is-rounded" target="_blank" rel="noopener">
+                  <span class="icon"><i class="far fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#bibtex" class="external-link button action-button is-rounded">
+                  <span class="icon"><i class="far fa-copy"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-figure-card">
+            <div class="hero-figure-header">
+              <div>
+                <p class="card-kicker">Main result</p>
+                <h2 class="figure-title">Frontier search keeps improving after hill climbing plateaus</h2>
+              </div>
+            </div>
+            <figure class="image hero-image-wrap">
+              <img src="./static/images/gear/main_result.png"
+                alt="Running best validation bits-per-byte for Baseline, GEAR-Prompt, GEAR-Fixed, and GEAR-Evolve.">
+            </figure>
+            <div class="mini-feature-grid">
+              <div class="mini-feature-card">
+                <h3>Population frontier</h3>
+                <p>Keep multiple elite research states alive instead of collapsing to one incumbent.</p>
+              </div>
+              <div class="mini-feature-card">
+                <h3>Mutation + crossover</h3>
+                <p>Explore local variants and recombine complementary ideas across branches.</p>
+              </div>
+              <div class="mini-feature-card">
+                <h3>Evolvable controller</h3>
+                <p>Let the agent repair the search policy when its invariants become too weak.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section" id="overview">
+    <div class="container is-max-desktop">
+      <div class="section-heading has-text-centered">
+        <p class="section-kicker">Overview</p>
+        <h2 class="title is-2">Why GEAR matters</h2>
+      </div>
+
+      <div class="cards-grid cards-grid-three">
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>Research is not one path</h3>
+          <p>AutoResearch-style hill climbing keeps only the current best, discarding useful partial ideas and
+            complementary local optima.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-dna"></i></div>
+          <h3>Search states become genetic material</h3>
+          <p>Each node preserves code, parentage, metrics, reflections, and productivity statistics for future
+            expansion.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-robot"></i></div>
+          <h3>Agents get a stronger outer loop</h3>
+          <p>GEAR keeps the same training harness and objective, but swaps greedy keep-or-discard search for a
+            structured frontier.</p>
+        </article>
+      </div>
+
+      <div class="content-card prose-card">
+        <div class="content has-text-justified paper-prose">
+          <p>
+            Autonomous ML research agents can now edit code, run experiments, inspect results, and decide what to try
+            next.
+            But a single-incumbent loop is a brittle representation of research: once a direction is worse than the
+            current best,
+            the concrete artifact behind that idea is usually gone.
+          </p>
+
+          <p>
+            <strong>GEAR</strong> treats agentic research as a population-based search process. It maintains a bounded
+            frontier of elite nodes,
+            selects parents by balancing productivity, novelty, coverage, and recency, then expands the frontier through
+            mutation or semantic crossover.
+          </p>
+
+          <p>
+            The result is a drop-in genetic search policy for AutoResearch-style systems. Across 100 experiments on the
+            same language-modeling setup,
+            all GEAR variants beat the baseline, and the self-evolving controller achieves the lowest validation
+            bits-per-byte.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="method">
+    <div class="container is-max-desktop">
+      <div class="section-heading has-text-centered">
+        <p class="section-kicker">Method</p>
+        <h2 class="title is-2">Genetic AutoResearch</h2>
+      </div>
+
+      <div class="content-card split-card">
+        <div class="split-copy">
+          <h3>From one incumbent to a frontier</h3>
+          <p>
+            GEAR replaces the baseline loop with a frontier of elite nodes. The agent consults the frontier, selects one
+            or two parents,
+            creates a child, runs the fixed training job, evaluates fitness, and either promotes the child or discards
+            it from the frontier.
+          </p>
+          <ul>
+            <li><strong>Mutation:</strong> edit code from one parent.</li>
+            <li><strong>Crossover:</strong> transplant a coherent idea from a complementary second parent.</li>
+            <li><strong>Roles:</strong> preserve best, lean, and diverse lines of inquiry.</li>
+          </ul>
+        </div>
+        <figure class="image framed-figure split-figure">
+          <img src="./static/images/gear/method.png"
+            alt="GEAR method overview compared with single-incumbent AutoResearch.">
+          <figcaption>GEAR maintains a frontier population and uses mutation/crossover rather than a single greedy
+            incumbent.</figcaption>
+        </figure>
+      </div>
+
+      <div class="content-card split-card trajectories-card">
+        <div class="split-copy">
+          <h3>Three variants</h3>
+          <p>
+            GEAR forms a ladder from policy written in natural language, to policy externalized as deterministic code,
+            to policy treated as a mutable search target. This separates what the agent changes in the experiment from
+            how the agent searches.
+          </p>
+        </div>
+        <figure class="image framed-figure split-figure">
+          <img src="./static/images/gear/variants.png" alt="GEAR-Prompt, GEAR-Fixed, and GEAR-Evolve variants.">
+          <figcaption>GEAR-Prompt executes policy from instructions, GEAR-Fixed uses a deterministic controller, and
+            GEAR-Evolve can modify the controller itself.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section" id="results">
+    <div class="container is-max-desktop">
+      <div class="section-heading has-text-centered">
+        <p class="section-kicker">Results</p>
+        <h2 class="title is-2">GEAR beats AutoResearch under the same budget</h2>
+      </div>
+
+      <div class="content-card split-card">
+        <div class="split-copy">
+          <h3>Final best elites</h3>
+          <p>
+            Under identical environments and 100 experiment steps, all GEAR variants achieve lower validation bpb than
+            the AutoResearch baseline.
+            GEAR-Evolve is strongest overall, reaching 0.97658 bpb and crossing the baseline plateau earliest.
+          </p>
+          <ul>
+            <li>Baseline: 0.98232 bpb</li>
+            <li>GEAR-Prompt: 0.98001 bpb</li>
+            <li>GEAR-Fixed: 0.97914 bpb</li>
+            <li>GEAR-Evolve: 0.97658 bpb</li>
+          </ul>
+        </div>
+        <figure class="image framed-figure split-figure">
+          <img src="./static/images/gear/table_main.png"
+            alt="Final best elite comparison table for AutoResearch and GEAR variants.">
+          <figcaption>Final best elite per variant within the first 100 experiments.</figcaption>
+        </figure>
+      </div>
+
+      <div class="content-card analysis-card trajectories-card">
+        <div class="analysis-copy">
+          <h3>Sustained improvement</h3>
+          <p>
+            The baseline concentrates almost all progress early and then stalls. GEAR variants keep improving across the
+            full budget,
+            showing the value of preserving diverse anchors and recombining ideas instead of committing to a single
+            path.
+          </p>
+        </div>
+        <div class="figure-grid two-up">
+          <figure class="image framed-figure">
+            <img src="./static/images/gear/quarter_table.png"
+              alt="Improvement in running best bpb per quarter of experiments.">
+            <figcaption>Improvement in running best bpb per 25-experiment block.</figcaption>
+          </figure>
+          <figure class="image framed-figure">
+            <img src="./static/images/gear/controller_edits.png"
+              alt="GEAR-Evolve controller edits during 100 experiments.">
+            <figcaption>GEAR-Evolve patches its controller when crossover suggestions become redundant or degenerate.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="analysis">
+    <div class="container is-max-desktop">
+      <div class="section-heading has-text-centered">
+        <p class="section-kicker">Analysis</p>
+        <h2 class="title is-2">What the genetic structure buys</h2>
+      </div>
+
+      <div class="cards-grid cards-grid-three">
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+          <h3>Mutation explores locally</h3>
+          <p>Single-parent edits let each elite branch test architecture, optimizer, schedule, and regularization
+            changes without erasing other branches.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-random"></i></div>
+          <h3>Crossover composes discoveries</h3>
+          <p>Complementary parents let the agent transplant useful changes across branches, turning separate partial
+            wins into stronger children.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fas fa-tools"></i></div>
+          <h3>Evolving policy repairs failure modes</h3>
+          <p>GEAR-Evolve identifies degenerate crossover behavior and patches the controller, improving the search loop
+            itself mid-run.</p>
+        </article>
+      </div>
+
+      <div class="content-card prose-card">
+        <div class="content has-text-justified paper-prose">
+          <p>
+            The key empirical difference is not only final bpb. The baseline quickly converges to a local optimum, while
+            GEAR maintains multiple
+            lines of inquiry and continues discovering improvements over longer horizons.
+          </p>
+          <p>
+            Mechanized crossover is especially important: the fixed and evolved controllers enforce complementarity and
+            avoid repeatedly using the
+            same parent pair, producing substantially higher-quality crossover attempts than prompt-only execution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section" id="bibtex">
+    <div class="container is-max-desktop">
+      <div class="content-card bibtex-card">
+        <div class="bibtex-header">
+          <div>
+            <p class="section-kicker left-kicker">Citation</p>
+            <h2 class="title is-3 bibtex-title">BibTeX</h2>
+          </div>
+          <button class="button is-rounded bibtex-copy" onclick="copyBibtex()">
+            <span class="icon"><i class="far fa-copy"></i></span>
+            <span id="copy-label">Copy</span>
+          </button>
+        </div>
+        <pre><code id="bibtex-block">@article{jeddi2026gear,
+  title   = {GEAR: Genetic AutoResearch for Agentic Code Evolution},
+  author  = {Jeddi, Ahmadreza and Le, Minh Ngoc and Karaimer, Hakki Can and Derpanis, Konstantinos G. and Taati, Babak},
+  year    = {2026},
+  url     = {https://loopformer.github.io}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer site-footer">
+    <div class="container is-max-desktop">
+      <div class="footer-shell">
+        <div>
+          <h3>GEAR</h3>
+          <p>Genetic AutoResearch for agentic code evolution.</p>
+        </div>
+        <div class="footer-links">
+          <a href="./static/pdf/GEAR_Genetic_AutoResearch.pdf" target="_blank" rel="noopener">Paper</a>
+          <a href="#bibtex">BibTeX</a>
+        </div>
+      </div>
+      <p class="template-credit">
+        Built from the LoopFormer project-page template and inspired by the <a
+          href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">NeRFies</a> template.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyBibtex() {
+      const text = document.getElementById('bibtex-block').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const label = document.getElementById('copy-label');
+        label.textContent = 'Copied';
+        setTimeout(() => { label.textContent = 'Copy'; }, 1400);
+      });
+    }
+  </script>
+</body>
+
+</html>
